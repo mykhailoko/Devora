@@ -8,19 +8,19 @@ const MessageModel = require('./models/Message');
 const app = express()
 const server = require("http").createServer(app)
 
-const io = require("socket.io")(server, {
+/*const io = require("socket.io")(server, {
     cors: {
         origin: ["https://devora-frontend-bco90ozoq-michaels-projects-c4856009.vercel.app"],
         // http://localhost:5173
         methods: ["GET", "POST", "PUT", "DELETE"]
     }
-});
+});*/
 
 require('dotenv').config();
 
 const MONGO_URI = process.env.MONGO_URI;
 
-io.on("connection", function(socket){
+/*io.on("connection", function(socket){
     socket.on("newuser", function(username){
         socket.broadcast.emit("update", `${username} joined the conversation`);
     });
@@ -46,7 +46,7 @@ io.on("connection", function(socket){
     socket.on("joinChat", (chatId) => {
         socket.join(chatId); 
     });
-});
+});*/
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }))

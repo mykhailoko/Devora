@@ -21,7 +21,7 @@ function ChatPage() {
         setShowChats(!showChats);
     };
 
-    useEffect(() => {
+    /*useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
             .then(response => {
                 setUsername(response.data.username);
@@ -77,6 +77,78 @@ function ChatPage() {
             );
             
             setMessages(prev => [...prev, response.data])
+            setNewMessage("");
+        } catch (err) {
+            console.error("Ошибка при отправке сообщения:", err);
+        }
+    };*/
+
+    // Загрузка сообщений через обычные HTTP-запросы
+    const loadMessages = async (chatId) => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/messages/${chatId}`);
+            setMessages(response.data);
+        } catch (err) {
+            console.error("Ошибка загрузки сообщений:", err);
+        }
+    };
+
+    // Периодическая проверка новых сообщений
+    const startPolling = (chatId) => {
+        const interval = setInterval(() => {
+            loadMessages(chatId);
+        }, 3000); // Проверка каждые 3 секунды
+        setPollingInterval(interval);
+    };
+
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
+            .then(response => {
+                setUsername(response.data.username);
+                setUserId(response.data._id);
+            })
+            .catch(err => console.log(err));
+
+        return () => {
+            if (pollingInterval) clearInterval(pollingInterval);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (userId) {
+            axios.get(`${process.env.REACT_APP_API_URL}/get-chats/${userId}`)
+                .then(response => setChats(response.data))
+                .catch(err => console.log(err));
+        }
+    }, [userId]);
+
+    useEffect(() => {
+        if (selectedChat) {
+            loadMessages(selectedChat._id);
+            startPolling(selectedChat._id);
+        }
+
+        return () => {
+            if (pollingInterval) clearInterval(pollingInterval);
+        };
+    }, [selectedChat]);
+
+    const sendMessage = async () => {
+        if (!newMessage.trim() || !selectedChat) return;
+    
+        const messageData = {
+            chatId: selectedChat._id,
+            username,
+            text: newMessage
+        };
+    
+        try {
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`,
+                messageData
+            );
+            
+            setMessages(prev => [...prev, response.data]);
             setNewMessage("");
         } catch (err) {
             console.error("Ошибка при отправке сообщения:", err);
