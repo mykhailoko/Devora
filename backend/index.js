@@ -52,7 +52,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(cors({
-    origin: ["https://devora-frontend-bco90ozoq-michaels-projects-c4856009.vercel.app"],
+    origin: ["https://devora-frontend-phi.vercel.app/"],
     // http://localhost:5173
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
