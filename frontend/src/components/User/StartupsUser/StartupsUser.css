@@ -1,0 +1,128 @@
+.startups-user-container {
+  background-color: #1f1c2c;
+  padding: 20px 40px 40px;
+  box-shadow: 0px 0px 15px rgba(146, 141, 171, 0.3);
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;              
+  flex-direction: column;    
+  background-image: url("../../../assets/startups-bg.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  
+}
+
+.startups-user-title {
+  text-align: center;
+  font-size: 28px;
+  color: #928dab;
+  padding-bottom: 30px;
+}
+
+.user-startups {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.user-startups-item {
+  background-color: #1f1c2c;
+  padding: 40px;
+  padding-bottom: 30px;
+  box-shadow: 0px 0px 20px rgba(146, 141, 171, 0.3);
+  border-radius: 20px;
+}
+
+.user-startups-item-container {
+  padding-bottom: 20px;
+}
+
+.user-startups h2 {
+  color: #928dab;
+  padding-bottom: 10px;
+}
+
+.user-startups p {
+  color: #928dab;
+}
+
+.user-startups-item-title {
+  color: #928dab;
+  padding-bottom: 3px;
+}
+
+.user-line-item {
+  display: flex;
+  align-items: center;
+}
+
+.user-founder-link {
+  padding-left: 5px;
+  padding-bottom: 3px;
+  color: #928dab;
+  word-break: break-all;
+}
+
+.user-looking-for-developers {
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .startups-user-container {
+    max-width: 650px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .startups-user-container {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (max-width: 1390px) {
+  .startups-user-container {
+    max-width: 550px;
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  .startups-user-container {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .startups-user-container {
+    max-width: 450px;
+  }
+}
+
+@media only screen and (max-width: 1085px) {
+  .startups-user-container {
+    max-width: 420px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .startups-user-container {
+      max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .startups-user-container {
+      max-width: 80%;
+  }
+
+  .user-startups-item-container {
+    font-size: 12px;
+  }
+
+  .user-startups-item {
+    padding: 20px;
+  }
+}

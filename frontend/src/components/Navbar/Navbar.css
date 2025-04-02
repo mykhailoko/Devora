@@ -1,0 +1,156 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 0px;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 27px;
+    font-weight: bold;
+    color: #928dab;
+    padding-left: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-login {
+    background: transparent;
+    border: 3px solid #928dab;
+    border-radius: 50px;
+    color: #928dab;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px 25px 7px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.navbar-login:hover {
+    background-color: #928dab;
+    color: #1f1c2c;
+}
+
+.user-icon {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.user-icon:hover {
+    background-color: #2d293e;
+}
+
+.show-user-menu {
+    background: none;
+    border: none;
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; 
+    top: 100%;
+    right: 30px;
+    background-color: #928dab;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    min-width: 150px;
+    z-index: 2;
+}
+
+.user-menu-link, .user-menu-button {
+    color: #1f1c2c;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    padding: 5px;
+}
+
+.user-menu-link {
+    text-decoration: none;
+}
+
+.user-menu-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.user-menu-link:hover, .user-menu-button:hover {
+    background-color: rgb(31, 28, 44, 0.2);
+    border-radius: 5px;
+}
+
+.bell {
+    height: 40px;
+    margin-right: 20px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.chat {
+    height: 39px;
+    margin-right: 20px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.chat:hover {
+    background-color: #2d293e;
+}
+
+.bell:hover {
+    background-color: #2d293e;
+}
+
+.right-part-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .bell {
+        margin-right: 5px;
+    }
+
+    .chat {
+        margin-right: 5px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .bell {
+        height: 35px;
+        margin-right: 4px;
+    }
+
+    .chat {
+        height: 34px;
+        margin-right: 4px;
+    }
+}

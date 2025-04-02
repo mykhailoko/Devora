@@ -1,0 +1,50 @@
+.user-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #1f1c2c;
+    padding-bottom: 30px;
+}
+
+.main-part {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-part {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto; 
+        grid-template-areas:
+            "portfolio portfolio"
+            "startups following";
+        gap: 20px;
+        padding: 10px 30px;
+    }
+
+    .main-part > :nth-child(1) { grid-area: portfolio; } 
+    .main-part > :nth-child(2) { grid-area: startups; }  
+    .main-part > :nth-child(3) { grid-area: following; } 
+
+    .main-part > * {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-part {
+        grid-template-columns: 1fr; 
+        justify-items: center;
+        padding: 10px 15px; 
+        grid-template-areas:
+            "portfolio"
+            "startups"
+            "following";
+    }
+
+    .main-part > * {
+        width: 100%; 
+        max-width: 300px; 
+    }
+}

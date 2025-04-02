@@ -1,0 +1,105 @@
+.startups-container {
+    background-color: #1f1c2c;
+    width: 100%;
+    position: relative;
+    padding: 60px 40px;
+    min-height: 100vh;
+}
+
+.startups-title {
+    text-align: center;
+    font-size: 40px;
+    color: #928dab;
+    padding-bottom: 40px;
+}
+
+.startups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.startups-item {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    background-color: #1f1c2c;
+    padding: 40px;
+    padding-bottom: 30px;
+    box-shadow: 0px 0px 20px rgba(146, 141, 171, 0.3);
+    border-radius: 20px;
+}
+
+.startups-item-container {
+    padding-bottom: 20px;
+}
+
+.startups h2 {
+    color: #928dab;
+    padding-bottom: 10px;
+}
+
+.startups p {
+    color: #928dab;
+}
+
+.startups-item-title {
+    color: #928dab;
+    padding-bottom: 3px;
+}
+
+.line-item {
+    display: flex;
+    align-items: center;
+}
+
+.founder-link {
+    padding-left: 5px;
+    padding-bottom: 3px;
+    color: #928dab;
+}
+
+.founder-link:hover {
+    text-decoration: underline;
+}
+
+.looking-for-developers {
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+
+.join-button {
+    background: transparent;
+    border: 3px solid #928dab;
+    border-radius: 50px;
+    color: #928dab;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 30px 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+}
+
+.join-button:hover {
+    background-color: #928dab;
+    color: #1f1c2c;
+}
+
+.request-was-sent {
+    color: #928dab;
+}
+
+@media only screen and (max-width: 470px) {
+    .startups-item {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .startups-item {
+        width: 60%;
+    }
+}

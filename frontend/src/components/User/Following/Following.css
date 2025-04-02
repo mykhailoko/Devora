@@ -1,0 +1,83 @@
+.following-container {
+    background-color: #1f1c2c;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 15px rgba(146, 141, 171, 0.3);
+    border-radius: 20px;
+    max-width: 300px;
+    width: 100%;
+    background-image: url("../../../assets/following-bg.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.following-title {
+    text-align: center;
+    font-size: 28px;
+    color: #928dab;
+}
+
+.username-list {
+    padding: 20px 0px;
+}
+
+.username-name {
+    color: #928dab;
+    padding-left: 15px;
+    padding-bottom: 2px;
+    font-size: 20px;
+    word-break: break-all;
+}
+
+.username-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ava-item {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username-item:hover {
+    background-color: rgba(146, 141, 171, 0.3);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1140px) {
+    .following-container {
+      max-width: 250px;
+      padding: 20px 15px;
+    }
+}
+
+@media only screen and (max-width: 1085px) {
+    .following-container {
+      max-width: 220px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .following-container {
+        max-width: 100%; 
+        width: 100%;
+    }
+
+    .username-list {
+        margin: 0 auto; 
+        width: fit-content;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .following-container {
+        max-width: 80%; 
+        width: 80%;
+    }
+}

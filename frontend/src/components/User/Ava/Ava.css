@@ -1,0 +1,101 @@
+.ava-container {
+    background-color: #1f1c2c;
+    margin: 20px 30px 15px;
+    padding: 20px 40px;
+    box-shadow: 0px 0px 15px rgba(146, 141, 171, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("../../../assets/ava-bg.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.ava-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username {
+    color: #928dab;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    font-size: 24px;
+}
+
+.username-container {
+    display: flex;
+    align-items: center;
+}
+
+.follow {
+    border: 3px solid #928dab;
+    background-color: transparent;
+    color: #928dab;
+    border-radius: 100px;
+    padding: 10px 27px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.follow:hover {
+    background-color: #928dab;
+    color: #1f1c2c;
+    border: 3px solid transparent;
+}
+
+#file-upload {
+    display: none;
+}
+
+#avatar-name {
+    display: flex;
+    align-items: center;
+}
+
+.custom-file-upload {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.custom-file-upload img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .username {
+        word-break: break-all;
+    }
+
+    .follow {
+        font-size: 16px;
+        padding: 10px 17px;
+    }
+
+    .ava-container {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .username {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .username {
+        font-size: 18px;
+    }
+}
