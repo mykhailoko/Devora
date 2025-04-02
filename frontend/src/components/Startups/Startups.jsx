@@ -8,7 +8,7 @@ function Startups() {
     const [sentRequests, setSentRequests] = useState({});
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/get-startups`)
+        axios.get(`https://devora-frontend-phi.vercel.app/get-startups`)
             .then(res => {
                 setStartups(res.data);
             })
@@ -16,12 +16,12 @@ function Startups() {
     }, [startups]);
 
     const handleJoin = (userId, startupId, startupName) => {
-        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
+        axios.get(`https://devora-frontend-phi.vercel.app/user`, { withCredentials: true })
             .then(response => {
                 const username = response.data.username; 
                 const currentUserId = response.data._id; 
 
-                axios.post(`${process.env.REACT_APP_API_URL}/add-notification`, {
+                axios.post(`https://devora-frontend-phi.vercel.app/add-notification`, {
                     sender: username,
                     senderId: userId,
                     userId: currentUserId,

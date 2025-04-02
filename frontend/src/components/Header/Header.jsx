@@ -29,7 +29,7 @@ function Header() {
             developers: tempDevelopers
         };
 
-        axios.post(`${process.env.REACT_APP_API_URL}/add-startup`, updatedStartupEditor)
+        axios.post(`https://devora-frontend-phi.vercel.app/add-startup`, updatedStartupEditor)
             .then(res => {
                 if (res.data) {
                     setName(res.data.name);

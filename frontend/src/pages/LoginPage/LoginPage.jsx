@@ -11,7 +11,7 @@ function LoginPage() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_API_URL}/login`, {username, password})
+        axios.post(`https://devora-frontend-phi.vercel.app/login`, {username, password})
         .then(result => {
             if  (result.data === "Success") {
                 navigate('/home')

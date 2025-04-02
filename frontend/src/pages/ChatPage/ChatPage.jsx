@@ -22,7 +22,7 @@ function ChatPage() {
     };
 
     /*useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
+        axios.get(`https://devora-frontend-phi.vercel.app/user`, { withCredentials: true })
             .then(response => {
                 setUsername(response.data.username);
                 setUserId(response.data._id);
@@ -32,7 +32,7 @@ function ChatPage() {
 
     useEffect(() => {
         if (userId) {
-            axios.get(`${process.env.REACT_APP_API_URL}/get-chats/${userId}`)
+            axios.get(`https://devora-frontend-phi.vercel.app/get-chats/${userId}`)
                 .then(response => {
                     setChats(response.data);
                 })
@@ -42,7 +42,7 @@ function ChatPage() {
 
     useEffect(() => {
         if (selectedChat) {
-            axios.get(`${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`)
+            axios.get(`https://devora-frontend-phi.vercel.app/messages/${selectedChat._id}`)
                 .then(response => {
                     setMessages(response.data);
                     socket.emit("joinChat", selectedChat._id);
@@ -72,7 +72,7 @@ function ChatPage() {
     
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`,
+                `https://devora-frontend-phi.vercel.app/messages/${selectedChat._id}`,
                 messageData
             );
             
@@ -86,7 +86,7 @@ function ChatPage() {
     // Загрузка сообщений через обычные HTTP-запросы
     const loadMessages = async (chatId) => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/messages/${chatId}`);
+            const response = await axios.get(`https://devora-frontend-phi.vercel.app/messages/${chatId}`);
             setMessages(response.data);
         } catch (err) {
             console.error("Ошибка загрузки сообщений:", err);
@@ -102,7 +102,7 @@ function ChatPage() {
     };
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
+        axios.get(`https://devora-frontend-phi.vercel.app/user`, { withCredentials: true })
             .then(response => {
                 setUsername(response.data.username);
                 setUserId(response.data._id);
@@ -116,7 +116,7 @@ function ChatPage() {
 
     useEffect(() => {
         if (userId) {
-            axios.get(`${process.env.REACT_APP_API_URL}/get-chats/${userId}`)
+            axios.get(`https://devora-frontend-phi.vercel.app/get-chats/${userId}`)
                 .then(response => setChats(response.data))
                 .catch(err => console.log(err));
         }

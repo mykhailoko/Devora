@@ -11,7 +11,7 @@ function Following() {
     useEffect(() => {
         const fetchFollowingUsers = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/get-following/${id}`);
+                const response = await axios.get(`https://devora-frontend-phi.vercel.app/get-following/${id}`);
                 setFollowingUsers(response.data);
             } catch (err) {
                 console.error("Error fetching followed users", err);

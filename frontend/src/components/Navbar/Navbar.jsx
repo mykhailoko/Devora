@@ -17,11 +17,11 @@ function Navbar() {
     
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/home`)
+        axios.get(`https://devora-frontend-phi.vercel.app/home`)
         .then(result => {
             if (result.data === "Success") {
                 setIsAuthenticated(true);
-                axios.get(`${process.env.REACT_APP_API_URL}/user`)
+                axios.get(`https://devora-frontend-phi.vercel.app/user`)
                     .then(res => {
                         setUserId(res.data._id); 
                     })

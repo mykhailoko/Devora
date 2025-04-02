@@ -14,7 +14,7 @@ function UserPage() {
 
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`)
+        axios.get(`https://devora-frontend-phi.vercel.app/user/${id}`)
         .then(result => {
             if (!result.data) {
                 navigate("/home")
