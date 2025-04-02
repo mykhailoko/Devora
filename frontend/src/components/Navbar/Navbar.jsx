@@ -17,11 +17,11 @@ function Navbar() {
     
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get('http://localhost:3001/home')
+        axios.get(`${process.env.REACT_APP_API_URL}/home`)
         .then(result => {
             if (result.data === "Success") {
                 setIsAuthenticated(true);
-                axios.get('http://localhost:3001/user')
+                axios.get(`${process.env.REACT_APP_API_URL}/user`)
                     .then(res => {
                         setUserId(res.data._id); 
                     })
@@ -62,7 +62,7 @@ function Navbar() {
     }
 
     const handleLogout = () => {
-        axios.get('http://localhost:3001/logout') 
+        axios.get(`${process.env.REACT_APP_API_URL}/logout`) 
         .then(() => {
             setIsAuthenticated(false); 
             navigate('/home'); 

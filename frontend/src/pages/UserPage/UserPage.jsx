@@ -14,7 +14,7 @@ function UserPage() {
 
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`http://localhost:3001/user/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`)
         .then(result => {
             if (!result.data) {
                 navigate("/home")

@@ -10,7 +10,8 @@ const server = require("http").createServer(app)
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: ["https://devora-frontend-bco90ozoq-michaels-projects-c4856009.vercel.app"],
+        // http://localhost:5173
         methods: ["GET", "POST", "PUT", "DELETE"]
     }
 });
@@ -51,7 +52,8 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://devora-frontend-bco90ozoq-michaels-projects-c4856009.vercel.app"],
+    // http://localhost:5173
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))

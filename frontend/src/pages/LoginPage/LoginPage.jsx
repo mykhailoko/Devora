@@ -11,7 +11,7 @@ function LoginPage() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', {username, password})
+        axios.post(`${process.env.REACT_APP_API_URL}/login`, {username, password})
         .then(result => {
             if  (result.data === "Success") {
                 navigate('/home')

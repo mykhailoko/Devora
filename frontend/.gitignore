@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 codehive.psd
+
+.env

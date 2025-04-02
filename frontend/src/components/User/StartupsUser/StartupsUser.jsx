@@ -9,7 +9,7 @@ function StartupsUser() {
     const [errorMessage, setErrorMessage] = useState("");
 	
 	useEffect(() => {
-		axios.get(`http://localhost:3001/get-user-startups/${id}`)
+		axios.get(`${process.env.REACT_APP_API_URL}/get-user-startups/${id}`)
             .then(res => {
                 if (res.data.length === 0) {
                     setErrorMessage("User has no startups");

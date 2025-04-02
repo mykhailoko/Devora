@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Bar from "../../assets/bar.png";
 import CrossChat from "../../assets/cross-chat.png";
 
-const socket = io("http://localhost:3001");
+const socket = io(`${process.env.REACT_APP_API_URL}`);
 
 function ChatPage() {
     const [userId, setUserId] = useState(null);
@@ -22,7 +22,7 @@ function ChatPage() {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:3001/user", { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
             .then(response => {
                 setUsername(response.data.username);
                 setUserId(response.data._id);
@@ -32,7 +32,7 @@ function ChatPage() {
 
     useEffect(() => {
         if (userId) {
-            axios.get(`http://localhost:3001/get-chats/${userId}`)
+            axios.get(`${process.env.REACT_APP_API_URL}/get-chats/${userId}`)
                 .then(response => {
                     setChats(response.data);
                 })
@@ -42,7 +42,7 @@ function ChatPage() {
 
     useEffect(() => {
         if (selectedChat) {
-            axios.get(`http://localhost:3001/messages/${selectedChat._id}`)
+            axios.get(`${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`)
                 .then(response => {
                     setMessages(response.data);
                     socket.emit("joinChat", selectedChat._id);
@@ -72,7 +72,7 @@ function ChatPage() {
     
         try {
             const response = await axios.post(
-                `http://localhost:3001/messages/${selectedChat._id}`,
+                `${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`,
                 messageData
             );
             

@@ -28,13 +28,13 @@ function Portfolio() {
     })));
 
     useEffect(() => {
-        axios.get('http://localhost:3001/user', { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/user`, { withCredentials: true })
             .then(res => {
                 setCurrentUserId(res.data?._id);
             })
             .catch(err => console.log(err));
 
-        axios.get(`http://localhost:3001/user/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`)
             .then(res => {
                 const user = res.data;
                 setFullname(user.fullname);
@@ -59,7 +59,7 @@ function Portfolio() {
             }))
         };
 
-        axios.put('http://localhost:3001/update-portfolio', updatedPortfolio)
+        axios.put(`${process.env.REACT_APP_API_URL}/update-portfolio`, updatedPortfolio)
             .then(res => {
                 setFullname(res.data.fullname);
                 setBiography(res.data.biography);

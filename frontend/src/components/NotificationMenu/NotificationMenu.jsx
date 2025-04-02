@@ -10,7 +10,7 @@ function NotificationMenu() {
     useEffect(() => {
         const fetchNotifications = async () => {
           try {
-            const response = await axios.get('http://localhost:3001/get-notifications');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/get-notifications`);
             setNotifications(response.data);
           } catch (error) {
             console.error("Error fetching notifications", error);
@@ -22,7 +22,7 @@ function NotificationMenu() {
 
     const handleDeleteNotification = async (notificationId) => {
         try {
-            await axios.delete(`http://localhost:3001/delete-notification/${notificationId}`);
+            await axios.delete(`${process.env.REACT_APP_API_URL}/delete-notification/${notificationId}`);
             setNotifications(prevNotifications => prevNotifications.filter(notification => notification._id !== notificationId));
         } catch (error) {
             console.error("Error deleting notification", error);
@@ -31,7 +31,7 @@ function NotificationMenu() {
 
     const handleAccept = async (notification) => {
         try {
-            await axios.post("http://localhost:3001/join-chat", {
+            await axios.post(`${process.env.REACT_APP_API_URL}/join-chat`, {
                 userId: notification.userId,
                 senderId: notification.senderId,
                 startupId: notification.startupId,

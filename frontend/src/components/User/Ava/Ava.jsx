@@ -14,7 +14,7 @@ function Ava() {
 
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`http://localhost:3001/user/${id}`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, { withCredentials: true })
         .then(result => {
 			if(result.data){
 				setUsername(result.data.username)
@@ -25,7 +25,7 @@ function Ava() {
 	}, [id]);
 		
 	useEffect(() => {
-        axios.get("http://localhost:3001/user")
+        axios.get(`${process.env.REACT_APP_API_URL}/user`)
             .then(result => {
                 if (result.data) {
                     setCurrentUserId(result.data._id);
@@ -37,7 +37,7 @@ function Ava() {
     }, [id]);
 
 	const handleFollow = () => {
-        axios.post(`http://localhost:3001/follow/${id}`)
+        axios.post(`${process.env.REACT_APP_API_URL}/follow/${id}`)
             .then(result => {
                 setFollowing(result.data.following);
 				setShowFollowButton(false);
@@ -46,7 +46,7 @@ function Ava() {
     };
 
 	const handleUnfollow = () => {
-		axios.delete(`http://localhost:3001/unfollow/${id}`)
+		axios.delete(`${process.env.REACT_APP_API_URL}/unfollow/${id}`)
 			.then(result => {
 				setFollowing(result.data.following);
 				setShowFollowButton(true);
@@ -75,7 +75,7 @@ function Ava() {
 				setAvatar(base64);
 				
 				const response = await axios.put(
-					`http://localhost:3001/update-avatar/${currentUserId}`,
+					`${process.env.REACT_APP_API_URL}/update-avatar/${currentUserId}`,
 					{ avatar: base64 }
 				);
 				

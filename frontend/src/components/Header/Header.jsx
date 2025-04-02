@@ -29,7 +29,7 @@ function Header() {
             developers: tempDevelopers
         };
 
-        axios.post('http://localhost:3001/add-startup', updatedStartupEditor)
+        axios.post(`${process.env.REACT_APP_API_URL}/add-startup`, updatedStartupEditor)
             .then(res => {
                 if (res.data) {
                     setName(res.data.name);
