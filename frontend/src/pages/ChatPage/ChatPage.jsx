@@ -16,6 +16,7 @@ function ChatPage() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
     const [showChats, setShowChats] = useState(false);
+    const [pollingInterval, setPollingInterval] = useState("");
 
     const toggleChats = () => {
         setShowChats(!showChats);
