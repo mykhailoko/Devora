@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Bar from "../../assets/bar.png";
 import CrossChat from "../../assets/cross-chat.png";
 
-const socket = io(`${process.env.REACT_APP_API_URL}`);
+// const socket = io(`${process.env.REACT_APP_API_URL}`);
 
 function ChatPage() {
     const [userId, setUserId] = useState(null);
