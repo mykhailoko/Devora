@@ -145,7 +145,7 @@ function ChatPage() {
     
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}/messages/${selectedChat._id}`,
+                `https://devora-a75l.onrender.com/messages/${selectedChat._id}`,
                 messageData
             );
             
