@@ -51,11 +51,15 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
-app.use(cors({
-    origin: ['https://devora-a75l.onrender.com', 'https://devora-frontend.onrender.com'],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}))
+const corsOptions = {
+    origin: ['https://devora-a75l.onrender.com', 'https://devora-frontend.onrender.com', 'http://localhost:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+app.use(cors(corsOptions))
+
 app.use(cookieParser())
 
 mongoose.connect(MONGO_URI)
