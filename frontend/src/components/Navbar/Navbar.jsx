@@ -64,7 +64,7 @@ function Navbar() {
     }
 
     const handleLogout = () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/logout`) 
+        axios.get(`https://devora-a75l.onrender.com/logout`) 
         .then(() => {
             setIsAuthenticated(false); 
             navigate('/home'); 
