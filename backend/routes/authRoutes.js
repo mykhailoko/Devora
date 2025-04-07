@@ -32,7 +32,11 @@ router.post("/login", (req, res) => {
             bcrypt.compare(password, user.password, (err, response) => {
                 if (response) {
                     const token = jwt.sign({ id: user._id, username: user.username }, jwtSecret, {expiresIn: "1d"})
-                    res.cookie("token", token)
+                    res.cookie("token", token, {
+                        httpOnly: true,
+                        sameSite: "None", 
+                        secure: true      
+                    });
                     res.json("Success")
                 } else {
                     res.json("the password is incorrect")

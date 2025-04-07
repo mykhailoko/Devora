@@ -17,7 +17,9 @@ function Navbar() {
     
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`https://devora-a75l.onrender.com/home`)
+        axios.get("https://devora-a75l.onrender.com/home", {
+            withCredentials: true
+        })
         .then(result => {
             if (result.data === "Success") {
                 setIsAuthenticated(true);
