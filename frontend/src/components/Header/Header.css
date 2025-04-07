@@ -28,7 +28,11 @@
 }
 
 .right-part {
-    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
 }
 
 .header-title {
@@ -75,6 +79,7 @@
 
 .header-buttons {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -255,6 +260,10 @@
 @media only screen and (max-width: 700px) {
     .header-title {
         font-size: 80px;
+    }
+
+    .right-part {
+        margin-top: 40px;
     }
 
     .header-description {

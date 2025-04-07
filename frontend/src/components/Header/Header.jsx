@@ -75,6 +75,7 @@ function Header() {
                         </button>
                     </div>
                 </div>
+                {/*
                 <Canvas id='setupCanvas'>
                     <ambientLight />
                     <OrbitControls enableZoom={false} />
@@ -83,6 +84,7 @@ function Header() {
                     </Suspense>
                     <Environment preset='sunset' />
                 </Canvas>
+                */}
             </div>
             <img src={Background1} alt='bg' className='background' />
 
