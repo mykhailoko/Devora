@@ -55,7 +55,7 @@ const corsOptions = {
     origin: ['https://devora-a75l.onrender.com', 'https://devora-frontend.onrender.com', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
 }
 app.use(cookieParser())
 app.use(cors(corsOptions))
