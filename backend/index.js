@@ -52,7 +52,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 const corsOptions = {
-    origin: ['https://devora-a75l.onrender.com'],
+    origin: ['https://devora-a75l.onrender.com', 'https://devora-frontend.onrender.com', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
