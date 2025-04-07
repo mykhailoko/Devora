@@ -14,7 +14,7 @@ function Ava() {
 
     axios.defaults.withCredentials = true;
     useEffect(() => {
-        axios.get(`https://devora-frontend-phi.vercel.app/user/${id}`, { withCredentials: true })
+        axios.get(`https://devora-a75l.onrender.com/user/${id}`, { withCredentials: true })
         .then(result => {
 			if(result.data){
 				setUsername(result.data.username)
@@ -25,7 +25,7 @@ function Ava() {
 	}, [id]);
 		
 	useEffect(() => {
-        axios.get(`https://devora-frontend-phi.vercel.app/user`)
+        axios.get(`https://devora-a75l.onrender.com/user`)
             .then(result => {
                 if (result.data) {
                     setCurrentUserId(result.data._id);
@@ -37,7 +37,7 @@ function Ava() {
     }, [id]);
 
 	const handleFollow = () => {
-        axios.post(`https://devora-frontend-phi.vercel.app/follow/${id}`)
+        axios.post(`https://devora-a75l.onrender.com/follow/${id}`)
             .then(result => {
                 setFollowing(result.data.following);
 				setShowFollowButton(false);
@@ -46,7 +46,7 @@ function Ava() {
     };
 
 	const handleUnfollow = () => {
-		axios.delete(`https://devora-frontend-phi.vercel.app/unfollow/${id}`)
+		axios.delete(`https://devora-a75l.onrender.com/unfollow/${id}`)
 			.then(result => {
 				setFollowing(result.data.following);
 				setShowFollowButton(true);
@@ -75,7 +75,7 @@ function Ava() {
 				setAvatar(base64);
 				
 				const response = await axios.put(
-					`https://devora-frontend-phi.vercel.app/update-avatar/${currentUserId}`,
+					`https://devora-a75l.onrender.com/update-avatar/${currentUserId}`,
 					{ avatar: base64 }
 				);
 				

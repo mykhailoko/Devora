@@ -10,7 +10,7 @@ function NotificationMenu() {
     useEffect(() => {
         const fetchNotifications = async () => {
           try {
-            const response = await axios.get(`https://devora-frontend-phi.vercel.app/get-notifications`);
+            const response = await axios.get(`https://devora-a75l.onrender.com/get-notifications`);
             setNotifications(response.data);
           } catch (error) {
             console.error("Error fetching notifications", error);
@@ -22,7 +22,7 @@ function NotificationMenu() {
 
     const handleDeleteNotification = async (notificationId) => {
         try {
-            await axios.delete(`https://devora-frontend-phi.vercel.app/delete-notification/${notificationId}`);
+            await axios.delete(`https://devora-a75l.onrender.com/delete-notification/${notificationId}`);
             setNotifications(prevNotifications => prevNotifications.filter(notification => notification._id !== notificationId));
         } catch (error) {
             console.error("Error deleting notification", error);
@@ -31,7 +31,7 @@ function NotificationMenu() {
 
     const handleAccept = async (notification) => {
         try {
-            await axios.post(`https://devora-frontend-phi.vercel.app/join-chat`, {
+            await axios.post(`https://devora-a75l.onrender.com/join-chat`, {
                 userId: notification.userId,
                 senderId: notification.senderId,
                 startupId: notification.startupId,

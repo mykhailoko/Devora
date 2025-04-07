@@ -10,7 +10,7 @@ function SignupPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`https://devora-frontend-phi.vercel.app/signup`, {username, password})
+        axios.post(`https://devora-a75l.onrender.com/signup`, {username, password})
         .then(result => {console.log(result)
             navigate('/login')
         })

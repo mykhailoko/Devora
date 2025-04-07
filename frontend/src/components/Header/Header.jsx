@@ -29,7 +29,7 @@ function Header() {
             developers: tempDevelopers
         };
 
-        axios.post(`https://devora-frontend-phi.vercel.app/add-startup`, updatedStartupEditor)
+        axios.post(`https://devora-a75l.onrender.com/add-startup`, updatedStartupEditor)
             .then(res => {
                 if (res.data) {
                     setName(res.data.name);

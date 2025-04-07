@@ -28,13 +28,13 @@ function Portfolio() {
     })));
 
     useEffect(() => {
-        axios.get(`https://devora-frontend-phi.vercel.app/user`, { withCredentials: true })
+        axios.get(`https://devora-a75l.onrender.com/user`, { withCredentials: true })
             .then(res => {
                 setCurrentUserId(res.data?._id);
             })
             .catch(err => console.log(err));
 
-        axios.get(`https://devora-frontend-phi.vercel.app/user/${id}`)
+        axios.get(`https://devora-a75l.onrender.com/user/${id}`)
             .then(res => {
                 const user = res.data;
                 setFullname(user.fullname);
@@ -59,7 +59,7 @@ function Portfolio() {
             }))
         };
 
-        axios.put(`https://devora-frontend-phi.vercel.app/update-portfolio`, updatedPortfolio)
+        axios.put(`https://devora-a75l.onrender.com/update-portfolio`, updatedPortfolio)
             .then(res => {
                 setFullname(res.data.fullname);
                 setBiography(res.data.biography);

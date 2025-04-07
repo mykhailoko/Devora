@@ -9,7 +9,7 @@ function StartupsUser() {
     const [errorMessage, setErrorMessage] = useState("");
 	
 	useEffect(() => {
-		axios.get(`https://devora-frontend-phi.vercel.app/get-user-startups/${id}`)
+		axios.get(`https://devora-a75l.onrender.com/get-user-startups/${id}`)
             .then(res => {
                 if (res.data.length === 0) {
                     setErrorMessage("User has no startups");
